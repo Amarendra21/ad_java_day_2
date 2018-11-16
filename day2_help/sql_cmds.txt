@@ -1,0 +1,26 @@
+create table my_customers (
+id int(5) primary key auto_increment,
+deposit_amt double(6,1),
+email varchar(20) unique,
+name varchar(20),password varchar(20),
+reg_date date,role varchar(10));
+
+#my_customers table data
+insert into my_customers values(1,1500,'rama@gmail','rama','1234','2017-1-23','admin');
+
+insert into my_customers values(2,1200,'kir@gmail','Kiran','123','2018-5-29','customer');
+
+insert into my_customers values(3,1800,'shek@gmail','Shekhar','1235','2016-3-4','customer');
+
+
+
+create table dac_books
+(id int(5) primary key auto_increment,title varchar(20) unique ,author varchar(20),category varchar(20),price double(6,1));
+insert into dac_books values(1,'bk1','abc','java_se',500);
+insert into dac_books values (2,'bk2','abc','java_se',300);
+
+insert into dac_books values(3,'bk3','abc1','java_ee',600);
+insert into dac_books values (4,'bk4','abc1','java_ee',450);
+
+insert into dac_books values(5,'bk5','abc','angular',550);
+insert into dac_books values (6,'bk6','abc','angular',650);

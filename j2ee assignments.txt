@@ -1,0 +1,42 @@
+Day 1
+
+0. Extract Eclipse (optional!)
+Extract J2EE docs (MANDATORY)
+1.Extract Apache Tomcat.
+2. Create new J2EE workspace in eclipse . (open Java EE perspective & confirm JRE location --pointing to JDK)
+3. Add Apache Tomcat server to workspace & test it.
+4. With IDE, create J2EE compliant web application Add index.html .
+Add a link on index page to invoke servlet(HelloServlet to test life cycle of servlet) -- as shown already.
+
+5. Add a link on index page.
+Sign Up --- 
+5.1 register.html 
+Create customer registration form to accept customer details
+name,email,password(type=password),registration date(type=date),reg amount(type="number"),role(radio btn)
+Submit it to servlet 
+5.2 CustomerRegServlet -- create a servlet to display customer information.
+
+6. Evening Lab 
+Reading H.W -- HTTP overview,Web server overview,request-response flow,j2ee compliant folder structure & j2ee_sequence.
+
+Day 2
+0. MANDATORY
+Import day2_web in your workspace ,edit DBUtils & test entire flow.
+
+1. Solve Customer Registration using Servlet-JDBC integration
+Flow 
+index.html(link --Sign Up) --register.html(reg form) --CustomerRegServlet(init,destroy,doGet/Post,loadOnstartUp) --BookShopDao (DBUtils) --Customer POJO --DB(my_customers table)
+Send reg status message to client browser.
+
+
+
+
+
+
+
+
+
+
+
+
+

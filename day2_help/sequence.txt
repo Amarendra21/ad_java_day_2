@@ -1,0 +1,118 @@
+Revise
+
+What is J2EE ?
+
+Why J2EE ?
+
+Layers in web programming in request n response flow
+clnt sends request url ---http://www.server.com:7070/bank/login.html
+http://www.server.com:7070/movie.avi
+Server side ---
+Host(IP) ---Web server/app srvr(TCP)---URI
+w.s chks ---for static conts 
+dyn conts --name of web app appears in the URI ---
+WC ---web apps 
+web app --- name (ctx path) (eg /day1 ...../bank)
+conts of web app
+J2EE compliant web app folder structure
+1. WEB-INF ---private --from clnt
+1.1 web.xml --- optional since J2EE 1.5 onwards
+=dep descriptor / web app
+who --- WC
+when --- @ dep time
+what --- xml tags --instrs meant for WC
+eg : servlet deployment tags, welcome-file-list,sec tags.....
+
+
+1.2 <classes> --- .class
+1.3 <lib> ---additional jars(eg : jdbc driver jar ,....)
+
+
+
+2. root of web app ---public ---.html/xml/jsp.....
+3. <src> --java src files.
+
+What is Web container --- (WC) & its jobs
+
+What is a Servlet & its jobs
+
+
+Revise Servlet API 
+
+Creation n deployment of servlet
+
+
+destroy --- WC / before GCing servlet instance.---end of servlet life cycle.
+triggers---server shut down, un deploy web app/re dep web app.
+
+creation n deployment steps (w/o IDE)
+deplyment ---2 ways
+1. xml tags
+<servlet>
+ <servlet-name>abc</servlet-name>
+ <servlet-class>pages.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+ <servlet-name>abc</servlet-name>
+ <url-pattern>/hi123</url-pattern>
+</servlet-mapping>
+
+2. annotations  ---javax.servlet.annotation
+
+---------------------------------
+
+CGI vs Servlets 
+
+
+One servlet can be deployed with multiple url patterns BUT multiple servlets can't have the same url-pattern.
+
+How to read request parameters in Servlet ?
+ServletRequest API
+1. public String getParameter(String paramName)
+
+2. public String[] getParameterValues(String paramName)
+
+Objective --Testing request params.
+index.html---input.html--TestParamServlet
+---------------------
+
+1. What will happen --if u don't add "/" in url-pattern?
+2. What will happen --if u add "/url-pattern" in form action or href ? 
+3. Can 1 servlet have multiple url patterns ? 
+4. Can any 2 servlets have the same url pattern ? 
+
+--------------------------------
+
+Servlet JDBC integration
+
+1. COPY JDBC driver JAR under ----<tomcat install dir>/lib
+OR <WEB-INF>/lib
+
+Layers involved 
+
+index.html--login.html(login form) ---LoginServlet --BookShopDao -- Customer POJO --DB
+
+
+Method overriding & exc handling
+Overriding form of the method can't throw any NEW or BROADER checked exception.
+------------------
+Page Navigation Techniques
+redirect scenario
+
+Exception involved 
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+
+Trigger --- flushing or closing or buffer overflow of PrintWriter.
+
+Need of session Tracking & Techniques
+
+Apply it to Bookshop case study.
+
+
+
+
+
+
+
+
+
